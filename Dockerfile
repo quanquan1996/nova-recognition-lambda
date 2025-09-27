@@ -1,9 +1,10 @@
 FROM public.ecr.aws/lambda/python:3.12
 
-# 安装 FFMpeg
-# 先更新包管理器，然后安装 ffmpeg。-y 表示自动确认。
-RUN yum update -y && \
-    yum install -y ffmpeg
+RUN microdnf install -y tar xz && \
+    curl -f -L -o ffmpeg.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz && \
+    tar -xf ffmpeg.tar.xz && \
+    mv ffmpeg-*-amd64-static/ffmpeg /usr/bin/ && \
+    rm -rf ffmpeg.tar.xz ffmpeg-*-amd64-static
 
 
 # Copy requirements.txt
