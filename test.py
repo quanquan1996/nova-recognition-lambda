@@ -5,10 +5,10 @@ from botocore.exceptions import NoCredentialsError, ClientError
 
 # --- 请在这里修改为你的配置 ---
 
-AWS_REGION = "us-east-1"
+AWS_REGION = "us-west-2"
 S3_BUCKET_NAME = "car-in"
 LOCAL_FILE_PATH = r"C:\Users\Administrator\Pictures\fire-test-img\14.ts"
-LAMBDA_FUNCTION_NAME = "VideoAnalysisFunction" # 你的 Lambda 函数名
+LAMBDA_FUNCTION_NAME = "NovaVideo" # 你的 Lambda 函数名
 
 # --- 配置结束 ---
 
